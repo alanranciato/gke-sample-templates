@@ -1,15 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: hello2
+  name: hello4
   namespace: default
-  annotations:
-    cloud.google.com/neg: '{"ingress": true}' # Creates a NEG after an Ingress is created
 spec:
   ports:
   - port: 8080
     protocol: TCP
     targetPort: 8080
   selector:
-    run: hello2
+    run: hello4
   type: NodePort

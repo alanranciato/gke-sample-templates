@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-resource-2
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /v3
+        backend:
+          serviceName: hello3
+          servicePort: 8080
+      - path: /v4
+        backend:
+          serviceName: hello4
+          servicePort: 8080

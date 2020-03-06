@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: hello3
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      run: hello3
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: hello3
+    spec:
+      containers:
+      - image: gcr.io/google-samples/hello-app:1.0
+        imagePullPolicy: IfNotPresent
+        name: hello3
+        ports:
+        - containerPort: 8080
+          protocol: TCP

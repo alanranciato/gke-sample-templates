@@ -1,0 +1,32 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: fanout-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /v3
+        backend:
+          serviceName: hello3
+          servicePort: 8080
+      - path: /v4
+        backend:
+          serviceName: hello4
+          servicePort: 8080
+      - path: /v5
+        backend:
+          serviceName: hello
+          servicePort: 8080
+      - path: /v6
+        backend:
+          serviceName: hello2
+          servicePort: 8080
+      - path: /v7
+        backend:
+          serviceName: ingress-resource
+          servicePort: 80
+      - path: /v1
+        backend:
+          serviceName: ingress-resource
+          servicePort: 80

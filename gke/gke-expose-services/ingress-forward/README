@@ -1,0 +1,5 @@
+# Regular Kubernetes Ingress
+# Create services
+kubectl apply -f ingress
+# Delete services
+kubectl delete -f ingress

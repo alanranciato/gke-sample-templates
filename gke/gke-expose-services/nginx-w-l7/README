@@ -1,0 +1,5 @@
+# nginx load balancer example
+# Create services
+kubectl apply -f nginx
+# Delete services
+kubectl delete -f nginx

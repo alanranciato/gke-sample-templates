@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: hello4
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      run: hello4
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: hello4
+    spec:
+      containers:
+      - image: gcr.io/google-samples/hello-app:2.0
+        imagePullPolicy: IfNotPresent
+        name: hello4
+        ports:
+        - containerPort: 8080
+          protocol: TCP
